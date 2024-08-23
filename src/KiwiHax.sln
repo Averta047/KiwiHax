@@ -13,18 +13,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		console|x64 = console|x64
+		console|x86 = console|x86
 		d3d9|x64 = d3d9|x64
 		d3d9|x86 = d3d9|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.console|x64.ActiveCfg = console|x64
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.console|x64.Build.0 = console|x64
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.console|x86.ActiveCfg = console|Win32
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.console|x86.Build.0 = console|Win32
 		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x64.ActiveCfg = d3d9|x64
 		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x64.Build.0 = d3d9|x64
 		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x86.ActiveCfg = d3d9|Win32
 		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x86.Build.0 = d3d9|Win32
-		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x64.ActiveCfg = Release|x64
-		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x64.Build.0 = Release|x64
-		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x86.ActiveCfg = Release|Win32
-		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x86.Build.0 = Release|Win32
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.console|x64.ActiveCfg = console|x64
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.console|x64.Build.0 = console|x64
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.console|x86.ActiveCfg = d3d9|Win32
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.console|x86.Build.0 = d3d9|Win32
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x64.ActiveCfg = d3d9|x64
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x64.Build.0 = d3d9|x64
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x86.ActiveCfg = d3d9|Win32
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x86.Build.0 = d3d9|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

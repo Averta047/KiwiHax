@@ -25,6 +25,9 @@ CConsole::~CConsole()
 
 bool CConsole::Initialize(const char* console_title, bool input, bool output)
 {
+	m_bInputEnabled = input;
+	m_bOutputEnabled = output;
+
 	AllocConsole();
 
 	if (output) {
@@ -94,4 +97,18 @@ const char* CConsole::Input(const char* format, ...)
 	std::cout << std::endl;
 
 	return value.c_str();
+}
+
+void CConsole::Clear()
+{
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coord = { 0, 0 }; // top-left corner
+	DWORD written;
+	CONSOLE_SCREEN_BUFFER_INFO bufferInfo;
+	GetConsoleScreenBufferInfo(hConsole, &bufferInfo);
+	DWORD cells = bufferInfo.dwSize.X * bufferInfo.dwSize.Y;
+	FillConsoleOutputCharacter(hConsole, ' ', cells, coord, &written);
+	GetConsoleScreenBufferInfo(hConsole, &bufferInfo);
+	FillConsoleOutputAttribute(hConsole, bufferInfo.wAttributes, cells, coord, &written);
+	SetConsoleCursorPosition(hConsole, coord);
 }

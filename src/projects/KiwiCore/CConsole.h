@@ -23,6 +23,8 @@ public:
 	void Print(const char* fmt, ...);
 	const char* Input(const char* fmt, ...);
 
+	void Clear();
+
 private:
 	FILE* m_pFile = nullptr;
 

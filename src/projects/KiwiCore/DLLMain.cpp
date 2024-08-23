@@ -5,28 +5,26 @@
 //================================================================//
 
 #include "CConsole.h"
+#include "Globals.h"
 
 #include <Windows.h>
 
 DWORD APIENTRY MainThread(LPVOID lpParam)
 {
 	Globals::Console.Initialize(	// TODO: make a console title string generator
-		"KiwiCore - "
-#ifdef _M_X64
-		"x64"
-#else // very bad idea but we are limited to x86 & x64 atm
-		"x86"
-#endif
-		" - "
-//#ifdef x
-		"d3d9"
-//#else
-//		"d3dx"
-//#endif
-		,
+		PROJECT_NAME " - " PROJECT_MODE " - " PROJECT_ARCH,
 		true,
 		true
 	);
+
+	//Globals::Console.Input("HELLO WORLD: ??? > ");
+	Globals::Console.Print(PROJECT_NAME " Attacked successfully!");
+	Globals::Console.Print("DLL Instance: 0x%p", lpParam);
+	Globals::Console.Print("Architecture: " PROJECT_ARCH);
+	Globals::Console.Print("Mode: " PROJECT_MODE "\0");
+
+	// Exit
+	Globals::Console.Shutdown();
 
 	FreeLibraryAndExitThread(static_cast<HMODULE>(lpParam), EXIT_SUCCESS);
 }

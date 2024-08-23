@@ -26,5 +26,8 @@
     <ClInclude Include="CConsole.h">
       <Filter>projects\KiwiCore</Filter>
     </ClInclude>
+    <ClInclude Include="Globals.h">
+      <Filter>projects\KiwiCore</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
