@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="dependencies">
+      <UniqueIdentifier>{a8cc85e4-1e78-46b8-9500-e5879d294d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects">
+      <UniqueIdentifier>{2967909e-43a7-4230-895b-fb5b9bce0687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects\KiwiInjector">
+      <UniqueIdentifier>{972fa561-a598-442d-816b-369b2f9a8953}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>projects\KiwiInjector</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

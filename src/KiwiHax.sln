@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KiwiCore", "projects\KiwiCore\KiwiCore.vcxproj", "{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "KiwiInjector", "projects\KiwiInjector\KiwiInjector.vcxproj", "{518DF614-3E65-408D-B7C9-55E6A22AA5FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "projects", "projects", "{3AB52ACA-DE67-4B5E-8175-2869F7BB7222}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{8B2EEB47-F6EF-4E16-8990-70025009B0DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		d3d9|x64 = d3d9|x64
+		d3d9|x86 = d3d9|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x64.ActiveCfg = d3d9|x64
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x64.Build.0 = d3d9|x64
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x86.ActiveCfg = d3d9|Win32
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB}.d3d9|x86.Build.0 = d3d9|Win32
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x64.ActiveCfg = Release|x64
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x64.Build.0 = Release|x64
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x86.ActiveCfg = Release|Win32
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC}.d3d9|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{782178BC-AD16-49B9-8AFC-1044A6BC8DEB} = {3AB52ACA-DE67-4B5E-8175-2869F7BB7222}
+		{518DF614-3E65-408D-B7C9-55E6A22AA5FC} = {3AB52ACA-DE67-4B5E-8175-2869F7BB7222}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9BACE1FF-0336-4775-B224-DB6F3BB6AFCE}
+	EndGlobalSection
+EndGlobal
