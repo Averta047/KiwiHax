@@ -9,6 +9,9 @@
 
 #include <Windows.h>
 
+#include "lua.hpp"
+#include "luajit.h"
+
 DWORD APIENTRY MainThread(LPVOID lpParam)
 {
 	Globals::Console.Initialize(	// TODO: make a console title string generator
@@ -22,6 +25,18 @@ DWORD APIENTRY MainThread(LPVOID lpParam)
 	Globals::Console.Print("DLL Instance: 0x%p", lpParam);
 	Globals::Console.Print("Architecture: " PROJECT_ARCH);
 	Globals::Console.Print("Mode: " PROJECT_MODE "\0");
+
+
+
+	lua_State* L = luaL_newstate();
+	luaL_openlibs(L);
+
+	// Using LuaJIT FFI (example)
+	luaL_dostring(L, "local ffi = require('ffi') ffi.cdef('int printf(const char *fmt, ...);') ffi.C.printf('Hello, LuaJIT!\\n')");
+
+	lua_close(L);
+
+
 
 	// Exit
 	Globals::Console.Shutdown();

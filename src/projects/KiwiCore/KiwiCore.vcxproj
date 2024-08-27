@@ -76,21 +76,29 @@
     <OutDir>../../../release/</OutDir>
     <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)_$(PlatformShortName)</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='console|Win32'">
     <OutDir>../../../release/</OutDir>
     <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
     <TargetName>$(ProjectName)_$(Configuration)_$(PlatformShortName)</TargetName>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='d3d9|x64'">
     <TargetName>$(ProjectName)_$(Configuration)_$(PlatformShortName)</TargetName>
     <OutDir>../../../release/</OutDir>
     <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='console|x64'">
     <TargetName>$(ProjectName)_$(Configuration)_$(PlatformShortName)</TargetName>
     <OutDir>../../../release/</OutDir>
     <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='d3d9|Win32'">
     <ClCompile>
@@ -101,7 +109,7 @@
       <PreprocessorDefinitions>NDEBUG;D3D9_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <StringPooling>
       </StringPooling>
@@ -125,7 +133,7 @@
       <PreprocessorDefinitions>NDEBUG;CONSOLE_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <StringPooling>
       </StringPooling>
@@ -149,7 +157,7 @@
       <PreprocessorDefinitions>NDEBUG;D3D9_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <StringPooling>
       </StringPooling>
@@ -173,7 +181,7 @@
       <PreprocessorDefinitions>NDEBUG;CONSOLE_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies\luajit;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <StringPooling>
       </StringPooling>
@@ -189,10 +197,154 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\dependencies\luajit\lib_aux.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_base.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_bit.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_buffer.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_debug.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_ffi.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_init.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_io.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_jit.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_math.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_os.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_package.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_string.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lib_table.c" />
+    <ClCompile Include="..\..\dependencies\luajit\ljamalg.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_alloc.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_api.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_asm.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_assert.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_bc.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_bcread.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_bcwrite.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_buf.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_carith.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_ccall.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_ccallback.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_cconv.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_cdata.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_char.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_clib.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_cparse.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_crecord.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_ctype.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_debug.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_dispatch.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_err.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_ffrecord.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_func.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_gc.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_gdbjit.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_ir.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_lex.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_lib.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_load.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_mcode.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_meta.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_obj.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_opt_dce.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_opt_fold.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_opt_loop.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_opt_mem.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_opt_narrow.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_opt_sink.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_opt_split.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_parse.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_prng.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_profile.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_record.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_serialize.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_snap.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_state.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_str.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_strfmt.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_strfmt_num.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_strscan.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_tab.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_trace.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_udata.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_vmevent.c" />
+    <ClCompile Include="..\..\dependencies\luajit\lj_vmmath.c" />
     <ClCompile Include="CConsole.cpp" />
     <ClCompile Include="DLLMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\dependencies\luajit\lauxlib.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_alloc.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_arch.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_asm.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_asm_arm.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_asm_arm64.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_asm_mips.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_asm_ppc.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_asm_x86.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_bc.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_bcdump.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_buf.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_carith.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_ccall.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_ccallback.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_cconv.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_cdata.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_char.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_clib.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_cparse.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_crecord.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_ctype.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_debug.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_def.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_dispatch.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_emit_arm.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_emit_arm64.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_emit_mips.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_emit_ppc.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_emit_x86.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_err.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_errmsg.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_ffrecord.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_frame.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_func.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_gc.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_gdbjit.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_ir.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_ircall.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_iropt.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_jit.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_lex.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_lib.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_mcode.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_meta.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_obj.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_parse.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_prng.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_profile.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_record.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_serialize.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_snap.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_state.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_str.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_strfmt.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_strscan.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_tab.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_target.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_target_arm.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_target_arm64.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_target_mips.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_target_ppc.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_target_x86.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_trace.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_traceerr.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_udata.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_vm.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lj_vmevent.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lua.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lua.hpp" />
+    <ClInclude Include="..\..\dependencies\luajit\luaconf.h" />
+    <ClInclude Include="..\..\dependencies\luajit\luajit.h" />
+    <ClInclude Include="..\..\dependencies\luajit\luajit_rolling.h" />
+    <ClInclude Include="..\..\dependencies\luajit\lualib.h" />
     <ClInclude Include="CConsole.h" />
     <ClInclude Include="Globals.h" />
   </ItemGroup>
