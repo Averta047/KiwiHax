@@ -74,22 +74,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='d3d9|Win32'">
     <OutDir>../../../release/</OutDir>
-    <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
+    <IntDir>../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
     <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='console|Win32'">
     <OutDir>../../../release/</OutDir>
-    <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
+    <IntDir>../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
     <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='d3d9|x64'">
     <OutDir>../../../release/</OutDir>
-    <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
+    <IntDir>../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
     <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='console|x64'">
     <OutDir>../../../release/</OutDir>
-    <IntDir>../../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
+    <IntDir>../../release/objs/$(ProjectName)/$(PlatformShortName)/</IntDir>
     <TargetName>$(ProjectName)_$(PlatformShortName)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='d3d9|Win32'">
