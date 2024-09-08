@@ -26,20 +26,32 @@ DWORD APIENTRY MainThread(LPVOID lpParam)
 	Globals::Console.Print("Architecture: " PROJECT_ARCH);
 	Globals::Console.Print("Mode: " PROJECT_MODE "\0");
 
+    /*
+	char dllPath[MAX_PATH];
+	GetModuleFileNameA(static_cast<HMODULE>(lpParam), dllPath, MAX_PATH);
+	PathRemoveFileSpec(dllPath); // remove DLL file name from the path
 
+	std::string luaPath = std::string(dllPath) + "\\lua51.dll";
+	if (!InjectDLL(luaPath)) {
+		Globals::Console.Print("Failed to inject lua51.dll: %d", GetLastError());
+		FreeLibraryAndExitThread(static_cast<HMODULE>(lpParam), EXIT_FAILURE);
+	}
+	Globals::Console.Print(luaPath.c_str());
 
 	lua_State* L = luaL_newstate();
+	if (!L) {
+		Globals::Console.Print("Failed to create Lua state");
+		FreeLibraryAndExitThread(static_cast<HMODULE>(lpParam), EXIT_FAILURE);
+	}
 	luaL_openlibs(L);
-
-	// Using LuaJIT FFI (example)
-	luaL_dostring(L, "local ffi = require('ffi') ffi.cdef('int printf(const char *fmt, ...);') ffi.C.printf('Hello, LuaJIT!\\n')");
-
+	
+	luaL_openlibs(L); 
+	luaL_dostring(L, "print(\"hello world\")");
 	lua_close(L);
-
-
+    */
 
 	// Exit
-	Globals::Console.Shutdown();
+	Globals::Console.Shutdown(); // FIX ME
 
 	FreeLibraryAndExitThread(static_cast<HMODULE>(lpParam), EXIT_SUCCESS);
 }

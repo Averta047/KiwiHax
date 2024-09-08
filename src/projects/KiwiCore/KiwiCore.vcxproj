@@ -197,10 +197,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Shared\CInjector.cpp" />
     <ClCompile Include="CConsole.cpp" />
     <ClCompile Include="DLLMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Shared\CInjector.h" />
     <ClInclude Include="CConsole.h" />
     <ClInclude Include="Globals.h" />
   </ItemGroup>

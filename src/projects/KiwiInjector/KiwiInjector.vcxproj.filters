@@ -10,10 +10,21 @@
     <Filter Include="projects\KiwiInjector">
       <UniqueIdentifier>{972fa561-a598-442d-816b-369b2f9a8953}</UniqueIdentifier>
     </Filter>
+    <Filter Include="projects\Shared">
+      <UniqueIdentifier>{a96fcd1e-79bb-4f08-a99d-0a2958c80cb0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>projects\KiwiInjector</Filter>
     </ClCompile>
+    <ClCompile Include="..\Shared\CInjector.cpp">
+      <Filter>projects\Shared</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Shared\CInjector.h">
+      <Filter>projects\Shared</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
