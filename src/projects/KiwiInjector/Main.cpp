@@ -8,9 +8,34 @@
 
 #include <Windows.h>
 #include <iostream>
+#include <string>
 #include <Shlwapi.h>
 
+std::string RGB2ANSI(int r, int g, int b)
+{
+    return "\033[38;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m";
+}
+
+std::string HEX2ANSI(unsigned int hex)
+{
+    int r = (hex >> 16) & 0xFF;
+    int g = (hex >> 8) & 0xFF;
+    int b = hex & 0xFF;
+
+    return "\033[38;2;" + std::to_string(r) + ";" + std::to_string(g) + ";" + std::to_string(b) + "m";
+}
+
 int main(int argc, char* argv[])
+{
+    std::cout << "KIWIHAX" << '\n';
+
+
+    return EXIT_SUCCESS;
+}
+
+
+
+/*
 {
     CInjector injector;
 
@@ -46,20 +71,7 @@ int main(int argc, char* argv[])
 
     return EXIT_SUCCESS;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 /* use later
 std::string RGB2ANSI(int r, int g, int b)
